@@ -61,11 +61,13 @@ spec:
   selector:
     app: jenkins
   ports:
-    - protocol: TCP
+    - name: web
+      protocol: TCP
       port: 8080
       targetPort: 8080
       nodePort: 30099
-    - protocol: TCP
+    - name: agent  
+      protocol: TCP
       port: 50000
       targetPort: 50000
   type: NodePort
