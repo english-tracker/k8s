@@ -71,23 +71,3 @@ spec:
       port: 50000
       targetPort: 50000
   type: NodePort
----
-apiVersion: v1
-kind: NetworkPolicy
-metadata:
-  name: jenkins-network-policy
-spec:
-  podSelector:
-    matchLabels:
-      app: jenkins
-  policyTypes:
-    - Ingress
-    - Egress
-  ingress:
-    - from:
-        - podSelector: {}
-      ports:
-        - protocol: TCP
-          port: 8080
-        - protocol: TCP
-          port: 50000
