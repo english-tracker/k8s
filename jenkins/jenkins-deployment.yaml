@@ -22,10 +22,10 @@ spec:
           containerPort: 8080
         - name: jnlp
           containerPort: 50000
-          volumeMounts:
-            - name: jenkins-data
-              mountPath: /var/jenkins_home
+        volumeMounts:
+          - name: jenkins-data
+            mountPath: /var/jenkins_home
       volumes:
-        - name: jenkins-data
-          persistentVolumeClaim:
-              claimName: jenkins-pvc    
+      - name: jenkins-data
+        persistentVolumeClaim:
+          claimName: jenkins-pvc    
