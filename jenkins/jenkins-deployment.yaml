@@ -22,3 +22,25 @@ spec:
           containerPort: 8080
         - name: jnlp
           containerPort: 50000
+            volumeMounts:
+            - name: jenkins-storage
+              mountPath: /var/jenkins_home
+            - name: jvm-lib
+              mountPath: /usr/lib/jvm
+            - name: docker-bin
+              mountPath: /usr/bin/docker
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
+      volumes:
+        - name: jenkins-storage
+          persistentVolumeClaim:
+            claimName: jenkins-pvc
+        - name: jvm-lib
+          hostPath:
+            path: /usr/lib/jvm
+        - name: docker-bin
+          hostPath:
+            path: /usr/bin/docker
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock  
