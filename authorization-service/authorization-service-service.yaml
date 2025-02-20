@@ -11,7 +11,7 @@ spec:
     app: authorization-service
   ports:
   - protocol: TCP
-    port: 8080        # Exposed service port
-    targetPort: 8080  # Container port
+    port: 8081        # Exposed service port
+    targetPort: 8081  # Container port
     nodePort: 30003
   type: NodePort  

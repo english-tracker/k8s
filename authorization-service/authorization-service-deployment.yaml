@@ -19,7 +19,7 @@ spec:
       - name: authorization-service-container
         image: 0964279710/authorization-service:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
