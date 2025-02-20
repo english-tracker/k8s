@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authorization-service
+  namespace: default  # Change namespace if needed
+  labels:
+    app: authorization-service
+spec:
+  replicas: 2  # Adjust the replica count as needed
+  selector:
+    matchLabels:
+      app: authorization-service
+  template:
+    metadata:
+      labels:
+        app: authorization-service
+    spec:
+      containers:
+      - name: authorization-service-container
+        image: 0964279710/authorization-service:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: authorization-service-config
+      restartPolicy: Always

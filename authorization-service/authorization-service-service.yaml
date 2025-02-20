@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: authorization-service-service
+  namespace: default  # Change namespace if needed
+  labels:
+    app: authorization-service
+spec:
+  type: ClusterIP  # Change to LoadBalancer if external access is needed
+  selector:
+    app: authorization-service
+  ports:
+  - protocol: TCP
+    port: 8080        # Exposed service port
+    targetPort: 8080  # Container port
+    nodePort: 30003
+  type: NodePort  
