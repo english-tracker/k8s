@@ -4,4 +4,4 @@ metadata:
   name: api-gateway-config
   namespace: default
 data:
-  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://10.148.0.7:30002/eureka/"
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://35.240.247.126:30002/eureka/"
