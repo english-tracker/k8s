@@ -21,4 +21,7 @@ spec:
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: api-gateway-config
       restartPolicy: Always

@@ -13,4 +13,5 @@ spec:
   - protocol: TCP
     port: 8080        # Exposed service port
     targetPort: 8080  # Container port
+    nodePort: 30001
   type: NodePort  

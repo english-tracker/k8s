@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-gateway-config
+  namespace: default
+data:
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://http://service-discovery.default.svc.cluster.local:8761/eureka/"

@@ -13,4 +13,5 @@ spec:
   - protocol: TCP
     port: 8761        # Exposed service port
     targetPort: 8761  # Container port
+    nodePort: 30002
   type: NodePort  
