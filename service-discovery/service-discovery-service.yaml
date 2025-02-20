@@ -6,7 +6,6 @@ metadata:
   labels:
     app: service-discovery
 spec:
-  type: ClusterIP  # Change to LoadBalancer if external access is needed
   selector:
     app: service-discovery
   ports:
@@ -14,4 +13,4 @@ spec:
     port: 8761        # Exposed service port
     targetPort: 8761  # Container port
     nodePort: 30002
-  type: ClusterIP  
+  type: NodePort  
