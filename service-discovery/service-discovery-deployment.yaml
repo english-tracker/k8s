@@ -6,7 +6,7 @@ metadata:
   labels:
     app: service-discovery
 spec:
-  replicas: 2  # Adjust the replica count as needed
+  replicas: 1  # Adjust the replica count as needed
   selector:
     matchLabels:
       app: service-discovery
