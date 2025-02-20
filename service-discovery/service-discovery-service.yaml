@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-discovery-service
+  namespace: default  # Change namespace if needed
+  labels:
+    app: service-discovery
+spec:
+  type: ClusterIP  # Change to LoadBalancer if external access is needed
+  selector:
+    app: service-discovery
+  ports:
+  - protocol: TCP
+    port: 8761        # Exposed service port
+    targetPort: 8761  # Container port
+  type: NodePort  
