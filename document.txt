@@ -1,1 +1,6 @@
 kubectl get pods -o wide
+kubectl config set-context --current --namespace=english-tracker
+
+
+# install kubernetes 
+https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/#google_vignette
