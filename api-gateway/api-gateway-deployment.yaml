@@ -6,7 +6,7 @@ metadata:
   labels:
     app: api-gateway
 spec:
-  replicas: 3  # Adjust the replica count as needed
+  replicas: 2  # Adjust the replica count as needed
   selector:
     matchLabels:
       app: api-gateway
