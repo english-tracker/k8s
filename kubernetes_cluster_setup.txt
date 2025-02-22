@@ -1,0 +1,36 @@
+Prerequisites
+
+Minimal install Ubuntu 22.04
+Minimum 2GB RAM or more
+Minimum 2 CPU cores / or 2 vCPU
+20 GB free disk space on /var or more
+Sudo user with admin rights
+Internet connectivity on each node
+
+Lab Setup
+Master Node:  10.148.0.2 – master_node
+First Worker Node:  10.148.0.3 – worker_node_1
+Second Worker Node:  10.148.0.4 – worker_node_2
+
+1) Set hostname on Each Node
+
+Master node: sudo hostnamectl set-hostname "master_node"
+First Worker Node: sudo hostnamectl set-hostname "worker_node_1"
+Second Worker Node: sudo hostnamectl set-hostname "worker_node_2"
+exec bash
+
+Add the following lines in /etc/hosts file on each node
+
+10.148.0.2   master-node master-node
+10.148.0.3   worker-node-1 worker-node-1
+10.148.0.4   worker-node-2 worker-node-2
+
+sudo mkdir -p -m 755 /etc/apt/keyrings
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+sudo kubeadm init --control-plane-endpoint=master-node
+
+kubeadm join master-node:6443 --token rgrx27.75tr4zx7r8lj28xw \
+        --discovery-token-ca-cert-hash sha256:ef24b05f89e91bf7f5358481bb2633f5aa45e012fd590682e4344a52cc3e4c61
+        ssh-keygen -t ed25519 -C "truong01.bp@gmail.com"
