@@ -4,4 +4,4 @@ metadata:
   name: api-gateway-config
   namespace: default
 data:
-  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://service-discovery-internal:8761/eureka/"
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://service-discovery-internal:8761/eureka/
