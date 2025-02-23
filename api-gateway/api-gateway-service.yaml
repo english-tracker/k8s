@@ -6,7 +6,7 @@ metadata:
   labels:
     app: api-gateway
 spec:
-  type: ClusterIP  # Change to LoadBalancer if external access is needed
+  type: NodePort  
   selector:
     app: api-gateway
   ports:
@@ -14,4 +14,3 @@ spec:
     port: 8080        # Exposed service port
     targetPort: 8080  # Container port
     nodePort: 30001
-  type: NodePort  
