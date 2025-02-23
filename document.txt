@@ -4,3 +4,7 @@ kubectl config set-context --current --namespace=english-tracker
 
 # install kubernetes 
 https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/#google_vignette
+docker build --build-arg JAR_FILE=build/libs/api-gateway-0.0.1-SNAPSHOT.jar -t 0964279710/api-gateway:latest .
+
+
+nc -zv authorization-service
