@@ -6,7 +6,7 @@ metadata:
   labels:
     app: authorization-service
 spec:
-  type: ClusterIP  # Change to LoadBalancer if external access is needed
+  type: NodePort  
   selector:
     app: authorization-service
   ports:
@@ -14,4 +14,3 @@ spec:
     port: 8081        # Exposed service port
     targetPort: 8081  # Container port
     nodePort: 30003
-  type: NodePort  
