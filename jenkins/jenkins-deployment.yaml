@@ -12,6 +12,8 @@ spec:
       labels:
         app: jenkins-deployment
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: workernode1
       containers:
       - name: jenkins
         image: jenkins/jenkins:lts
