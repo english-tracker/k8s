@@ -23,6 +23,9 @@ spec:
           containerPort: 8080
         - name: jnlp
           containerPort: 50000
+        env:
+        - name: JENKINS_OPTS
+          value: "--prefix=/jenkins"  
         volumeMounts:
           - name: jenkins-data
             mountPath: /var/jenkins_home
