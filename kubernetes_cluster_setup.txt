@@ -22,8 +22,8 @@ exec bash
 Add the following lines in /etc/hosts file on each node
 
 10.148.0.2   master-node master-node
-10.148.0.3   worker-node-1 worker-node-1
-10.148.0.4   worker-node-2 worker-node-2
+10.128.0.2   worker-node-1 worker-node-1
+10.128.0.3   worker-node-2 worker-node-2
 
 sudo mkdir -p -m 755 /etc/apt/keyrings
 
