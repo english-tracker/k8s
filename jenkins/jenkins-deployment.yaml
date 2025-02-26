@@ -1,17 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins
-  namespace: jenkins
+  name: jenkins-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins
+      app: jenkins-deployment
   template:
     metadata:
       labels:
-        app: jenkins
+        app: jenkins-deployment
     spec:
       containers:
       - name: jenkins
