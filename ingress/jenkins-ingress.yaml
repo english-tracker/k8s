@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: api-gateway-ingress
+  name: jenkins-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -20,6 +20,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: api-gateway-service
+            name: jenkins-service
             port:
               number: 80
