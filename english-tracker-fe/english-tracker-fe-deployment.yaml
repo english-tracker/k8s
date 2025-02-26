@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: english-tracker-fe
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: english-tracker-fe
+  template:
+    metadata:
+      labels:
+        app: english-tracker-fe
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: workernode1
+      containers:
+        - name: english-tracker-fe
+          image: 0964279710/english-tracker-fe:latest
+          ports:
+            - containerPort: 80
