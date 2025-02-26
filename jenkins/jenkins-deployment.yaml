@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-deployment
+  name: jenkins
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins-deployment
+      app: jenkins
   template:
     metadata:
       labels:
-        app: jenkins-deployment
+        app: jenkins
     spec:
       nodeSelector:
         kubernetes.io/hostname: workernode1
