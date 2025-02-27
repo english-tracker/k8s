@@ -4,14 +4,11 @@ metadata:
   name: english-tracker-fe-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
       - gungtoi.site
-    secretName: gungtoi-site-tls
   rules:
   - host: gungtoi.site 
     http:
