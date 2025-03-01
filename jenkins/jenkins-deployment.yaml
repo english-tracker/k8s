@@ -37,3 +37,7 @@ spec:
       - name: jenkins-data
         persistentVolumeClaim:
           claimName: jenkins-pvc    
+      - name: java-home
+        hostPath:
+          path: /usr/lib/jvm/java-21-openjdk-amd64
+          type: Directory    
