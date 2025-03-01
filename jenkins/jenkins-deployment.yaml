@@ -26,9 +26,13 @@ spec:
         env:
         - name: JENKINS_OPTS
           value: "--prefix=/jenkins"  
+        - name: JAVA_HOME
+          value: "/usr/lib/jvm/java-21-openjdk-amd64"  
         volumeMounts:
           - name: jenkins-data
             mountPath: /var/jenkins_home
+          - name: java-home
+            mountPath: /usr/lib/jvm/java-21-openjdk-amd64  
       volumes:
       - name: jenkins-data
         persistentVolumeClaim:
