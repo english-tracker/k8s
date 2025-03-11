@@ -18,6 +18,12 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts
         imagePullPolicy: Always
+        command: ["/bin/sh", "-c"]
+        args:
+        - apt-get update &&
+          apt-get install -y openjdk-21-jdk &&
+          export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 &&
+          jenkins.sh
         ports:
         - name: http
           containerPort: 8080
@@ -31,13 +37,13 @@ spec:
         volumeMounts:
           - name: jenkins-data
             mountPath: /var/jenkins_home
-          - name: java-home
-            mountPath: /usr/lib/jvm/java-21-openjdk-amd64  
+          # - name: java-home
+          #   mountPath: /usr/lib/jvm/java-21-openjdk-amd64  
       volumes:
       - name: jenkins-data
         persistentVolumeClaim:
           claimName: jenkins-pvc    
-      - name: java-home
-        hostPath:
-          path: /usr/lib/jvm/java-21-openjdk-amd64
-          type: Directory    
+      # - name: java-home
+      #   hostPath:
+      #     path: /usr/lib/jvm/java-21-openjdk-amd64
+      #     type: Directory    
